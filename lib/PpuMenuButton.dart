@@ -33,7 +33,7 @@ class _BasicAppBarSamplestate extends State<BasicAppBarSample> {
                 }),
             new PopupMenuButton<Choice>(
               // overflow menu
-              onSelected: _select,
+              onSelected: _select,//Called when the user selects a value from the popup menu created by this button.
               itemBuilder: (BuildContext context) {
                 return choices.skip(2).map((Choice choice) {
                   return new PopupMenuItem(
@@ -78,9 +78,15 @@ class ChoiceCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextStyle textStyle = Theme.of(context).textTheme.display1;
     return new Card(
-      elevation: 3.0,
+      elevation: 10.0,
+      //高度 显示出立体感 立体阴影
+      shape: new Border.all(
+          color: Colors.red, width: 3.0, style: BorderStyle.solid),
+      //图形边框
 //      margin: const EdgeInsets.all(30.0),
-    margin: new EdgeInsetsDirectional.only(bottom: 30.0,top: 10.0,start: 30.0),
+      margin:
+          new EdgeInsetsDirectional.only(bottom: 30.0, top: 10.0, start: 30.0),
+      //边距
       color: Colors.white,
       child: new Center(
         child: new Column(
