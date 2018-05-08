@@ -10,7 +10,7 @@ class FadeAppTest extends StatelessWidget {
     return new MaterialApp(
       title: 'Fade Demo',
       theme: new ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
       home: new MyFadeTest(title: 'Fade Demo'),
     );
@@ -26,16 +26,17 @@ class MyFadeTest extends StatefulWidget {
 }
 
 class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
-  AnimationController controller;
-  CurvedAnimation curved;
+  AnimationController controller;//动画控制器
+  CurvedAnimation curved;//曲线动画，动画插值，
   bool forward = true;
 
   @override
-  void initState() {
+  void initState() {//初始化，当当前widget被插入到树中时调用
     super.initState();
     controller = new AnimationController(
         vsync: this, duration: const Duration(seconds: 3));
-    curved = new CurvedAnimation(parent: controller, curve: Curves.bounceOut);
+    curved = new CurvedAnimation(parent: controller, curve: Curves.bounceOut);//模仿小球自由落体运动轨迹
+//    controller.forward();//放在这里开启动画 ，打开页面就播放动画
   }
 
   @override
@@ -46,8 +47,8 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
       ),
       body: new Center(
 //        child: new FadeTransition(//透明度动画
-//          opacity: curved,
-//          child: new FlutterLogo(
+//          opacity: curved,//将动画传入不同的动画widget
+//          child: new FlutterLogo(//创建一个小部件，用于绘制Flutter徽标
 //            size: 200.0,
 //          ),
 //        ),
@@ -56,15 +57,16 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
           child: new FlutterLogo(
             size: 200.0,
           ),
+
         ),
 
       ),
       floatingActionButton: new FloatingActionButton(
         onPressed: () {
           if (forward)
-            controller.forward();
+            controller.forward();//向前播放动画
           else
-            controller.reverse();
+            controller.reverse();//向后播放动画
           forward = !forward;
         },
         tooltip: 'fade',
