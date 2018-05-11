@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-/**
- * 通过继承CustomPainter 自定义一个空间
- */
+///通过继承CustomPainter 自定义一个控件
+
 class SignaturePainter extends CustomPainter {
   SignaturePainter(this.points);
 
@@ -26,6 +25,7 @@ class SignaturePainter extends CustomPainter {
 //          new Rect.fromCircle(center: points[i], radius: 20.0), paint);
 ////      canvas.drawOval(rect, paint)
 //    canvas.drawCircle(points[i], 20.0, paint);
+//    canvas.drawOval(rect, paint)
     }
   }
 

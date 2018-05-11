@@ -48,7 +48,7 @@ class SimpleDemoState extends State<SampleDemo> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('Sample APp'),
+        title: new Text('Sampless APp'),
       ),
       body: new Center(
         child: _getChild(),
