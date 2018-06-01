@@ -24,7 +24,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
-  static const size = const Size(20.0, 100.0);
+  static const size = const Size(200.0, 100.0);
   final random = new Random();
   AnimationController animation;
   BarCharTween tween;
@@ -60,9 +60,15 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return new Scaffold(
       body: new Center(
-          child: new CustomPaint(
-              size: new Size(400.0, 100.0),
-              painter: new BarChartPainter(tween.animate(animation)))),
+        child: new Stack(
+          children: <Widget>[
+            SizedBox(width: 200.0,height: 50.0,child: Material(color: Colors.blue,),),
+            CustomPaint(
+              painter: new BarChartPainter(tween.animate(animation)),
+            )
+          ],
+        ),
+      ),
       floatingActionButton: new FloatingActionButton(
         onPressed: changeData,
         child: new Icon(Icons.refresh),
