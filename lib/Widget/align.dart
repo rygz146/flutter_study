@@ -7,8 +7,16 @@ void main() {
       home: new Scaffold(
           body: new Stack(
         children: <Widget>[
+          Row(
+            children: <Widget>[
+              Flexible(
+                child: Text('fdsafads'),
+              ),
+            ],
+          ),
           new Align(
-            alignment: const FractionalOffset(0.5, 1.0),//偏移小数最大（1.0,1.0）  (0.0,0.0)左上角 （1.0,1.0）右下角
+            alignment: const FractionalOffset(0.5, 1.0),
+            //偏移小数最大（1.0,1.0）  (0.0,0.0)左上角 （1.0,1.0）右下角
 //          heightFactor: 40.0,
 //          widthFactor: 40.0,
             child: new Image.network(

@@ -101,7 +101,7 @@ packages:
       name: flutter_webview_plugin
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.1.5"
+    version: "0.1.6"
   front_end:
     dependency: transitive
     description:
@@ -423,5 +423,5 @@ packages:
     source: hosted
     version: "2.1.13"
 sdks:
-  dart: ">=2.0.0-dev.52.0 <=2.0.0-dev.59.0.flutter-ff815d05a5"
+  dart: ">=2.0.0-dev.52.0 <=2.0.0-dev.59.0.flutter-1a185867a9"
   flutter: ">=0.1.4 <2.0.0"
